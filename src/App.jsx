@@ -145,6 +145,8 @@ function App() {
   );
 
   return (
+    <div>
+      <h1>Calculator</h1>
     <div className="border">
       <div className="calculator-grid">
         <div className="output">
@@ -186,6 +188,7 @@ function App() {
           =
         </button>
       </div>
+    </div>
     </div>
   );
 }
