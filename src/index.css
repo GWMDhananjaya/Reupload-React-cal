@@ -8,7 +8,7 @@
 body{
     margin: 0;
 
-    background: linear-gradient(to right, #2c586e,#3b3b61);
+    background: linear-gradient(to right, #294655,#465f7d);
 }
 
 .calculator-grid{
@@ -23,7 +23,7 @@ body{
     cursor: pointer;
     font-size: 1.5rem;
     border:1px solid white;
-    background-color: rgba(255,255,255,.75);
+    background-color: rgba(213, 248, 253, 0.926);
     margin: .1rem;
     border-radius: .5rem;
 }

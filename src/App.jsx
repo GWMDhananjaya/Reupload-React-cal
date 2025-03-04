@@ -1,6 +1,14 @@
-import { useReducer } from "react";
+"use client";
+
+import 'flowbite/dist/flowbite.min.css';
+import { useReducer, useState } from "react";
 import DigitButton from "./DigitButton";
 import OperationButton from "./OperationButton";
+import {  Modal } from "flowbite-react";
+import { Banner } from "flowbite-react";
+import {  HiX ,HiArrowRight} from "react-icons/hi";
+import { FaGithub} from 'react-icons/fa'; 
+
 
 export const ACTIONS = {
   ADD_DIGIT: "add-digit",
@@ -143,12 +151,42 @@ function App() {
 
     {}
   );
+  const [openModal, setOpenModal] = useState(true);
+
+  
 
   return (
-    <div>
-      <h1>Calculator</h1>
-    <div className="border">
-      <div className="calculator-grid">
+    <div className="">
+      <div>
+      <>
+  <Modal show={openModal} onClose={() => setOpenModal(false)}>
+    
+    <Modal.Body>
+      <div className="space-y-6">
+        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+          This is my first web hosting project, where I’ve demonstrated the deployment of a ReactJS app using AWS S3,
+          with Continuous Integration and Continuous Deployment (CI/CD) via Jenkins. The project also integrates AWS
+          services for smooth and scalable hosting.
+        </p>
+        <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+          Additionally, this project showcases modern DevOps practices, highlighting the importance of automation in
+          the development and deployment process, ensuring efficient and reliable app hosting.
+        </p>
+      </div>
+    </Modal.Body>
+    <Modal.Footer>
+    <div className="flex justify-end">
+        <HiArrowRight className="h-5 w-5 text-gray-500 dark:text-gray-400 cursor-pointer" onClick={() => setOpenModal(false)} />
+      </div>
+    </Modal.Footer>
+  </Modal>
+</>
+
+      
+      </div>
+      
+    <div className="">
+      <div className="calculator-grid p-1">
         <div className="output">
           <div className="previous-operation">
             {formatOperation(previousOperand)} {operation}
@@ -189,6 +227,34 @@ function App() {
         </button>
       </div>
     </div>
+    <Banner className='p-6'>
+  <div className="flex w-full flex-col justify-between border-b border-gray-200 bg-gray-50 p-4 dark:border-gray-600 dark:bg-gray-700 md:flex-row">
+    <div className="mb-4 md:mb-0 md:mr-4">
+      <h2 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+      This is my first web hosting project, showcasing a ReactJS app deployed to S3 with CI/CD using Jenkins and AWS.
+      </h2>
+      <p className="flex items-center text-sm font-normal text-gray-500 dark:text-gray-400">
+        
+      </p>
+    </div>
+    <div className="flex shrink-0 items-center">
+      <a
+        href="https://github.com/GWMDhananjaya" 
+        className="mr-3 inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-900 hover:bg-gray-100 hover:text-cyan-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700"
+      >
+        <FaGithub className="mr-2 h-4 w-4" />
+        GitHub
+      </a>
+      
+        
+       
+      
+      <Banner.CollapseButton color="gray" className="border-0 bg-transparent text-gray-500 dark:text-gray-400">
+        <HiX className="h-4 w-4" />
+      </Banner.CollapseButton>
+    </div>
+  </div>
+</Banner>
     </div>
   );
 }
