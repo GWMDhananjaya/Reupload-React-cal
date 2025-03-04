@@ -188,6 +188,12 @@ function App() {
         </>
       </div>
 
+      <div className="justify-center flex text-xl font-bold dart:text-white">
+        <h1>
+          React.js app deployed to S3 with CI/CD using Jenkins and AWS
+        </h1>
+      </div>
+   
       <div className="">
         <div className="calculator-grid p-1">
           <div className="output">
